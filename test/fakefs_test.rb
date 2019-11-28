@@ -3693,4 +3693,12 @@ class FakeFSTest < Minitest::Test
 
     assert deleted_file_ino == dir_ino
   end
+
+  def test_fakefs_can_find_files_with_curly_braces_in_name
+    require 'find'
+
+    file_name = 'f{o}o'
+    File.open(file_name, 'w') { |f| f << 'some content' }
+    assert Find.find('file_name2')
+  end
 end

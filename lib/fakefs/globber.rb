@@ -77,6 +77,7 @@ module FakeFS
       # since if we're expecting them, the string should already be properly escaped
       unless gave_char_class
         regex_body = regex_body.gsub('[', '\[').gsub(']', '\]')
+        #regex_body = regex_body.gsub('{', '\{').gsub('}', '\}')
       end
 
       # This matches nested braces and attempts to do something correct most of the time
